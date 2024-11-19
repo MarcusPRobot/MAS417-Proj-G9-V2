@@ -63,5 +63,5 @@ def initiate_model_generation(wrongPress):
         print("Invalid choice, please try again")
         initiate_model_generation(True)
 
-
+# Initiate program
 main()

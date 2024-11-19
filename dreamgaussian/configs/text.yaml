@@ -3,7 +3,7 @@
 input: 
 # input text prompt (default to None, can be input in GUI too)
 prompt:
-negative_prompt:
+negative_prompt: overlapping geometries, artifacts
 # input mesh for stage 2 (auto-search from stage 1 output path if None)
 mesh:
 # estimated elevation angle for input image 
@@ -11,7 +11,7 @@ elevation: 0
 # reference image resolution
 ref_size: 256
 # density thresh for mesh extraction
-density_thresh: 1
+density_thresh: 0.7
 
 ### Output
 outdir: logs
@@ -20,11 +20,11 @@ save_path: ???
 
 ### Training
 # use mvdream instead of sd 2.1
-mvdream: False
+mvdream: True
 # use imagedream
 imagedream: False
 # use stable-zero123 instead of zero123-xl
-stable_zero123: True 
+stable_zero123: False 
 # guidance loss weights (0 to disable)
 lambda_sd: 1
 lambda_zero123: 0
@@ -33,19 +33,19 @@ warmup_rgb_loss: True
 # training batch size per iter
 batch_size: 1
 # training iterations for stage 1
-iters: 750
+iters: 200
 # whether to linearly anneal timestep
 anneal_timestep: True
 # training iterations for stage 2
 iters_refine: 50
 # training camera radius
-radius: 2.5
+radius: 2
 # training camera fovy
-fovy: 49.1
+fovy: 40
 # training camera min elevation
 min_ver: -30
 # training camera max elevation
-max_ver: 30
+max_ver: 60
 # checkpoint to load for stage 1 (should be a ply file)
 load:
 # whether allow geom training in stage 2
@@ -61,7 +61,7 @@ H: 800
 W: 800
 
 ### Gaussian splatting
-num_pts: 10000
+num_pts: 5000
 sh_degree: 0
 position_lr_init: 0.001
 position_lr_final: 0.00002
@@ -79,5 +79,5 @@ opacity_reset_interval: 700
 densify_grad_threshold: 0.01
 
 ### Textured Mesh
-geom_lr: 0.0001
+geom_lr: 0.001
 texture_lr: 0.2

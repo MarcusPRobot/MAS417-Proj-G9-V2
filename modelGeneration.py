@@ -24,7 +24,7 @@ def gen_model(objName, objDesc):
 
     combCMD = destCmd + " && " + genCmd + " && " + impCmd # envAct + "&&" +
 
-    print("Generating 3D model, estimated time 2-5 minutes...")
+    print("Generating 3D model, estimated time is 7 minutes...")
     #subprocess.run(['cmd', '/c', combCMD], shell=True)
     os.system(combCMD)
 
