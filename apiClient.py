@@ -9,7 +9,7 @@ initPrompt = ("Return a random 3D-printable simple object and a max 15 word desc
               "separated by a #. Keep the models with simple geometry "
               "that is easy for the AI to make; explain geometry and texture and "
               "not what the item is called. The name can not have any spaces. "
-              "Ex: 'fidget_spinner#Red standard fidgetspinner with 3 arms'")
+              "Ex: 'egyptian_pyramid#a 3D egyptian pyramid'")
 
 def get_prompt():
     client = OpenAI(
