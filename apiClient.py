@@ -5,11 +5,9 @@ from openai import OpenAI
 # key in a apiKey.py script in the "API_Shared_Key" variable. Nothing else is needed.
 from apiKey import API_Shared_Key
 
-initPrompt = ("Return a random 3D-printable simple object and a max 15 word description of it, "
-              "separated by a #. Keep the models with simple geometry "
-              "that is easy for the AI to make; explain geometry and texture and "
-              "not what the item is called. The name can not have any spaces. "
-              "Ex: 'egyptian_pyramid#a 3D egyptian pyramid'")
+initPrompt = ("Return a random 3D-printable marvel superhero with a max 10 word description of it, "
+              "separated by a #. The name can not have any spaces. "
+              "Ex: 'Superman#Superman from the newest movies'")
 
 def get_prompt():
     client = OpenAI(
@@ -17,14 +15,20 @@ def get_prompt():
     )
     apiHistory_file = open("API Logs.txt", "r")
     apiHistory = apiHistory_file.read()
-    chatCompletion = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[
-            {
-                "role": "user",
-                "content": apiHistory + "\n Here is the prompt:\n" + initPrompt,
-            }
-        ],
-    )
+
+    try:
+        chatCompletion = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {
+                    "role": "user",
+                    "content": apiHistory + "\n Here is the prompt:\n" + initPrompt,
+                }
+            ],
+        )
+    except Exception as error:
+        print("An error occurred: " + error)
+        return
+
     apiHistory_file.close()
     return chatCompletion.choices[0].message.content

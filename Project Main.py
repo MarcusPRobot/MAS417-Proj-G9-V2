@@ -3,7 +3,6 @@ from modelGeneration import gen_model
 ## Main program ###############################################################
 
 def main():
-    ##env_init()
     print("AI Powered Random 3D-Printable Object Generator")
     print("Choices:\n1. Generate random object\n2. Other options")
     main_options()
