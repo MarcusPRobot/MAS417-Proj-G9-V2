@@ -110,6 +110,7 @@ def progresscounter(taskID):
             response.raise_for_status()
         except requests.exceptions.HTTPError as exception:
             print("Exception: " + exception.response.text)
+            print("Exception number " + str(exceptionCount) + " out of 3 permitted.")
             exceptionCount += 1
             if exceptionCount > 3:
                 return
