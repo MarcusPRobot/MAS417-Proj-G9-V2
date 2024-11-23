@@ -1,5 +1,6 @@
 from apiClient import get_prompt
 from modelGeneration import gen_model
+from modelViewer import viewModel
 ## Main program ###############################################################
 
 def main():
