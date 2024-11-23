@@ -23,6 +23,7 @@ def other_options():
     otherChoice = int(input("Enter choice: "))
     if otherChoice == 1:
         print("Opening 3D model in 3D Viewer...")
+        viewModel()
     elif otherChoice == 2:
         print("Custom 3D model\nPut in name and then a description. No spaces in the name.")
         name = str(input("Enter name: "))
