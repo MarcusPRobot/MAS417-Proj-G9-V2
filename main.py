@@ -1,6 +1,7 @@
 from apiClient import get_prompt
 from modelGeneration import gen_model
 from modelViewer import viewModel
+
 ## Main program ###############################################################
 
 def main():
@@ -20,7 +21,7 @@ def main_options():
         main_options()
 
 def other_options():
-    print("Other options:\n1. Open 3D model in 3D Viewer\n2. Custom 3D model\n3. Exit program")
+    print("Other options:\n1. Open 3D model in 3D Viewer\n2. Custom 3D model\n3. Exit program\n4. Return to main menu")
     otherChoice = int(input("Enter choice: "))
     if otherChoice == 1:
         print("Opening 3D model in 3D Viewer...")
@@ -34,6 +35,9 @@ def other_options():
     elif otherChoice == 3:
         print("Exiting program...")
         exit()
+    elif otherChoice == 4:
+        print("Returning to main menu...")
+        main()
     else:
         print("Invalid choice, please try again")
         other_options()
