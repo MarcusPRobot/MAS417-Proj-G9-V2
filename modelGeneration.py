@@ -7,7 +7,7 @@ from apiKey import Meshy_APIKey
 # This script is borrowed from the Meshy API documentation, but does not come with any license.
 
 
-def gen_model(meshName, meshDesc):
+def genModel(meshName, meshDesc):
     payload = {
         "mode": "preview",
         "prompt": meshDesc,
@@ -26,7 +26,7 @@ def gen_model(meshName, meshDesc):
     response.raise_for_status()
     taskID = response.json().get('result')
 
-    progresscounter(taskID)
+    progressCounter(taskID)
     retrieveModel(taskID, meshName)
 
 def refineModel(taskID, meshName):
@@ -83,23 +83,23 @@ def retrieveModel(task_id, meshName):
             print("Model URL is not found\n")
             return
         print("Downloading model from: " + modelURL + "...\n")
-        installmodel(modelURL, meshName)
+        installModel(modelURL, meshName)
     else:
         print("Model generation failed\n")
         return
 
-def installmodel(modelURL, meshName):
+def installModel(modelURL, meshName):
     filePath = meshName + ".obj"
     fileDestination = "meshyModels/" + filePath
 
     urllib.request.urlretrieve(modelURL, filePath)
-    print("Model downloaded as 3D Model.obj")
+    print("Model downloaded in: " + filePath)
 
     os.rename(filePath, fileDestination)
     
-def progresscounter(taskID):
+def progressCounter(taskID):
     exceptionCount = 0
-    print("Generating model - 0%")
+    print("Generating model - Progress in percentage:")
 
     while True:
         headers = {

@@ -1,26 +1,26 @@
 from apiClient import get_prompt
-from modelGeneration import gen_model
+from modelGeneration import genModel
 
 ## Main program ###############################################################
 
 def main():
     print("AI Powered Random 3D-Printable Object Generator")
     print("Choices:\n1. Generate random object\n2. Other options")
-    main_options()
+    mainOptions()
 
-def main_options():
+def mainOptions():
     choice = int(input("Enter choice: "))
     if choice == 1:
-        initiate_model_generation(False)
+        initiateModelGeneration(False)
     elif choice == 2:
         print("Other options")
-        other_options()
+        otherOptions()
         main()
     else:
         print("Invalid choice, please try again")
-        main_options()
+        mainOptions()
 
-def other_options():
+def otherOptions():
     print("Other options:\n1. Open 3D model in 3D Viewer\n2. Custom 3D model\n3. Exit program\n4. Return to main menu")
     otherChoice = int(input("Enter choice: "))
     if otherChoice == 1:
@@ -31,7 +31,7 @@ def other_options():
         name = str(input("Enter name: "))
         description = str(input("Enter description: "))
         print("Creating " + name + " with description: " + description + " model...")
-        gen_model(name, description)
+        genModel(name, description)
     elif otherChoice == 3:
         print("Exiting program...")
         exit()
@@ -40,10 +40,10 @@ def other_options():
         main()
     else:
         print("Invalid choice, please try again")
-        other_options()
+        otherOptions()
 
 ## Generation of 3D model #####################################################
-def initiate_model_generation(wrongPress):
+def initiateModelGeneration(wrongPress):
     apiLogs = open("API Logs.txt", "a")
     if not wrongPress:
         gptData = get_prompt()
@@ -59,14 +59,14 @@ def initiate_model_generation(wrongPress):
     initChoice = int(input("Enter choice: "))
 
     if initChoice == 1:
-        gen_model(objectName, objectDescription)
+        genModel(objectName, objectDescription)
         main()
     elif initChoice == 2:
         print("Returning to main menu...")
         main()
     else:
         print("Invalid choice, please try again")
-        initiate_model_generation(True)
+        initiateModelGeneration(True)
 
 
 main()
