@@ -4,6 +4,9 @@ import requests
 import urllib.request
 from apiKey import Meshy_APIKey
 
+# This script is borrowed from the Meshy API documentation, but does not come with any license.
+
+
 def gen_model(meshName, meshDesc):
     payload = {
         "mode": "preview",

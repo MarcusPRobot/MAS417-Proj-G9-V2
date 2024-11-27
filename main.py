@@ -1,6 +1,5 @@
 from apiClient import get_prompt
 from modelGeneration import gen_model
-from modelViewer import viewModel
 
 ## Main program ###############################################################
 
@@ -16,6 +15,7 @@ def main_options():
     elif choice == 2:
         print("Other options")
         other_options()
+        main()
     else:
         print("Invalid choice, please try again")
         main_options()
@@ -25,7 +25,7 @@ def other_options():
     otherChoice = int(input("Enter choice: "))
     if otherChoice == 1:
         print("Opening 3D model in 3D Viewer...")
-        viewModel()
+        print("The viewer was removed from the repository, as it did not work at the project deadline.")
     elif otherChoice == 2:
         print("Custom 3D model\nPut in name and then a description. No spaces in the name.")
         name = str(input("Enter name: "))

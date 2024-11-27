@@ -5,6 +5,9 @@ from openai import OpenAI
 # key in a apiKey.py script in the "API_Shared_Key" variable. Nothing else is needed.
 from apiKey import API_Shared_Key
 
+# This script is borrowed from the OpenAIs Platform API documentation, but does not come with any license.
+
+
 initPrompt = ("Return a random 3D-printable marvel superhero with a max 10 word description of it, "
               "separated by a #. The name can not have any spaces. "
               "Ex: 'Superman#Superman from the newest movies'")
