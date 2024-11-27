@@ -27,6 +27,7 @@ Every missing package will be listed in CMD when trying to run the project, and 
 The final step is to create a new python script within the environment called "apiKey.py", and inserting this exact code:
 
 `API_Shared_Key = "API key from OpenAI Platform"`
+
 `Meshy_APIKey = "Replace with API key from Meshy.AI""`
 
 Just make sure the actual API keys are replacing the instructions in the provided lines of code. When completed, the code should be ready to go.
