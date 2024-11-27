@@ -4,3 +4,4 @@
 apiKey.py
 keys.env
 .venv
+.obj
