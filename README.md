@@ -24,13 +24,13 @@ Every missing package will be listed in CMD when trying to run the project, and 
 
 `.venv\Scripts\Activate.ps1`
 
-The final step is to create a new python script within the environment called "apiKey.py", and inserting this exact code:
+The final step is to create a new python script within the environment called "apiKey.py", and writing these two lines of code into the "apiKey.py" script:
 
-`API_Shared_Key = "API key from OpenAI Platform"`
+`API_Shared_Key = "Replace with API key from OpenAI Platform" #OpenAI`
 
-`Meshy_APIKey = "Replace with API key from Meshy.AI""`
+`Meshy_APIKey = "Replace with API key from Meshy.AI" #Meshy.ai`
 
-Just make sure the actual API keys are replacing the instructions in the provided lines of code. When completed, the code should be ready to go.
+Make sure the actual API keys are replacing the instructions in the provided lines of code. When completed, the code should be ready to go.
 
 
 
