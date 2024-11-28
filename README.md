@@ -12,15 +12,11 @@ This is the seccond repository, which is why it is called V2. V1 did only have o
 ## Project setup
 Install Python 3.12
 
-The project does not need any other software to work, all it needs is a few Python packages which can be installed using:
+Install requirements:
 
-`pip install <package>`
+`pip install -r requirements.txt`
 
-Example:
-
-`pip install openai`
-
-Every missing package will be listed in CMD when trying to run the project, and it is reccomended to download the packages whilst Pythons virtual environment is activated. The virtual environment can be activated whilst inside the root of the directory by going into CMD and using:
+It is reccomended to download the packages whilst Python's virtual environment is activated. The virtual environment can be activated whilst inside the root of the projects directory by going into CMD and using:
 
 `.venv\Scripts\Activate.ps1`
 
